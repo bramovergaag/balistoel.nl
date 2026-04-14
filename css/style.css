@@ -1,0 +1,492 @@
+/* ============================================================
+   Balistoel.nl — Stylesheet
+   Palet: Warm naturel (crème, teak-bruin, salie-groen)
+   ============================================================ */
+
+/* ---- Reset & base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #FAF6F0;
+  --bg-alt:    #F0E9DF;
+  --brown:     #8B5E3C;
+  --brown-dk:  #5C3D20;
+  --green:     #4A7C59;
+  --text:      #2C1A0E;
+  --text-lt:   #7A6252;
+  --white:     #FFFFFF;
+  --radius:    12px;
+  --shadow:    0 4px 24px rgba(44,26,14,0.10);
+  --transition: 0.25s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--brown-dk);
+  margin-bottom: 0.5rem;
+}
+
+h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+
+.container { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+.section-sub {
+  color: var(--text-lt);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--brown);
+  color: var(--white);
+  border-color: var(--brown);
+}
+.btn-primary:hover { background: var(--brown-dk); border-color: var(--brown-dk); transform: translateY(-2px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brown);
+  border-color: var(--brown);
+}
+.btn-secondary:hover { background: var(--brown); color: var(--white); transform: translateY(-2px); }
+
+/* ---- Header / Nav ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bg-alt);
+  padding: 0.9rem 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown-dk);
+}
+.logo span { color: var(--green); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--brown); }
+
+.nav-cta {
+  background: var(--brown);
+  color: var(--white) !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+}
+.nav-cta:hover { background: var(--brown-dk) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ---- Hero ---- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  min-height: 88vh;
+  padding: 5rem 1.5rem 4rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--bg-alt);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  color: var(--brown-dk);
+  margin-bottom: 1.2rem;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-lt);
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4/5;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Kenmerken ---- */
+.kenmerken {
+  background: var(--bg-alt);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.kenmerken h2 { margin-bottom: 0.5rem; }
+
+.kenmerken-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.kenmerk {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+.kenmerk:hover { transform: translateY(-4px); }
+
+.kenmerk-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.kenmerk h3 { color: var(--brown-dk); }
+
+.kenmerk p { font-size: 0.95rem; color: var(--text-lt); }
+
+/* ---- Producten ---- */
+.producten {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(44,26,14,0.15); }
+
+.product-img-wrap {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-img-wrap img { transform: scale(1.04); }
+
+.product-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-lt);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.product-info { padding: 1.5rem; }
+
+.product-info h3 { color: var(--brown-dk); font-size: 1.3rem; margin-bottom: 0.4rem; }
+
+.product-info p { color: var(--text-lt); font-size: 0.95rem; margin-bottom: 1rem; }
+
+.product-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 1rem;
+}
+
+/* ---- Over ons ---- */
+.over {
+  background: var(--brown-dk);
+  color: var(--white);
+  padding: 5rem 1.5rem;
+}
+
+.over-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.over-tekst h2 { color: var(--white); margin-bottom: 1rem; }
+
+.over-tekst p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+}
+
+.over-tekst .btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+  margin-top: 0.5rem;
+}
+.over-tekst .btn-primary:hover { background: #3a6347; border-color: #3a6347; }
+
+.over-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.over-badge {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.badge-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #F5C880;
+  min-width: 80px;
+}
+
+.badge-label {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+}
+
+/* ---- Contact ---- */
+.contact {
+  padding: 5rem 1.5rem;
+  background: var(--bg-alt);
+  text-align: center;
+}
+
+.contact-form {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1.5px solid var(--bg-alt);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color var(--transition);
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--brown);
+}
+
+.contact-form .btn { width: 100%; justify-content: center; }
+
+.contact-direct {
+  margin-top: 1.5rem;
+  color: var(--text-lt);
+  font-size: 0.95rem;
+}
+.contact-direct a { color: var(--brown); font-weight: 700; }
+.contact-direct a:hover { text-decoration: underline; }
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.75);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+.footer-logo span { color: #F5C880; }
+
+.footer-tagline { font-size: 0.9rem; margin-bottom: 1rem; }
+
+.footer-copy { font-size: 0.8rem; opacity: 0.6; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .hero-sub { margin: 0 auto 2rem; }
+  .hero-image { max-width: 420px; margin: 0 auto; }
+
+  .over-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-top: 1px solid var(--bg-alt);
+    padding: 1.5rem;
+    gap: 1.2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(44,26,14,0.10);
+  }
+  .nav-links.open { display: flex; }
+
+  .site-header { position: relative; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .kenmerken-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 420px) {
+  .kenmerken-grid { grid-template-columns: 1fr; }
+}
